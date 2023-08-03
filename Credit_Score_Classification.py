@@ -30,18 +30,11 @@ if data.isnull().sum().any():
 import plotly.express as px
 
 
-# In[42]:
+# In[7]:
 
 
-for i in column[6:27]:
+for i in data.columns[6:27]:
     fig = px.box(data, x="Credit_Score", y = i, color="Credit_Score", title=f"Credit Scores Based on {i}", 
              color_discrete_map={'Poor':'red', 'Standard':'yellow', 'Good':'green'})
     fig.update_traces(quartilemethod="exclusive")
     fig.show()
-
-
-# In[ ]:
-
-
-
-
